@@ -14,11 +14,11 @@ export default function WebRoutes() {
             <Routes>
                 <Route path="/" element={<App/>}>
                     <Route path="/" element={<Hero/>}/>
-                    <Route path="/projects" element={<Projects/>}/>
-                    <Route path="/about" element={<About/>}/>
-                    <Route path="/skills" element={<Skills/>}/>
-                    <Route path="/contact" element={<Contact/>}/>
-                    <Route path="/experience" element={<Experience/>}/>
+                    <Route path="/Builds"element={<Projects/>}/>
+                    <Route path="/WhoAmI" element={<About/>}/>
+                    <Route path="/DevPowers" element={<Skills/>}/>
+                    <Route path="/Let’sConnect" element={<Contact/>}/>
+                    <Route path="/CareerChronicles" element={<Experience/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

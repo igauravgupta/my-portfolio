@@ -47,7 +47,7 @@ export default function Hero() {
             className="w-60 h-60 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-purple-500 shadow-lg"
           >
             <img
-              src="./public/1732630581602.jpeg" // Replace with your actual image path
+              src="./src/assets/1732630581602.jpeg"
               alt="Gaurav Gupta"
               className="w-full h-full object-cover"
             />

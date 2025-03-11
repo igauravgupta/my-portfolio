@@ -4,8 +4,7 @@ import { FloatingTech } from "@/components/FloatingTech";
 import { DevAnimation } from "@/components/DevAnimation";
 import { Circle } from "lucide-react"; // Lucide icon for timeline
 
-// Professional Experience
-const professionalExperiences = [
+const experiences = [
   {
     year: "Sep 2024 - Nov 2024",
     role: "Full Stack Intern",
@@ -20,23 +19,12 @@ const professionalExperiences = [
     description:
       "Designed and implemented backend architecture, focusing on API performance and security for ADHD Tracker.",
   },
-];
-
-// Community & Hackathons
-const communityExperiences = [
   {
     year: "Aug 2023 - Present",
     role: "Web Coordinator",
     company: "GDG On Campus, KIET",
     description:
       "Mentored 20+ students, organized workshops, coding sessions, and led web development initiatives.",
-  },
-  {
-    year: "2024 - Present",
-    role: "Hackathon Organizer",
-    company: "Multiple Events",
-    description:
-      "Organized and participated in 6+ hackathons, achieving a top 10 position in Reckon 5.0.",
   },
 ];
 
@@ -48,78 +36,42 @@ export default function Experience() {
         <FloatingTech count={6} />
       </div>
 
-      {/* Section Title */}
-      <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text">
+      {/* Section Title (Updated Color) */}
+      <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">
         EXPERIENCE
       </h2>
 
-      {/* Experience Grid */}
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
-        {/* Professional Experience */}
-        <div>
-          <h3 className="text-2xl font-semibold text-purple-400 mb-6 text-center md:text-left">
-            💼 Professional Experience
-          </h3>
-          <div className="space-y-8">
-            {professionalExperiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                className="relative bg-[#1c2233] rounded-lg border border-gray-700 shadow-lg p-6"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
-                {/* Timeline Dot */}
-                <div className="absolute left-4 top-6 transform -translate-x-1/2">
-                  <Circle className="text-purple-400" size={16} />
-                </div>
+      {/* Experience Timeline */}
+      <div className="max-w-4xl mx-auto space-y-8">
+        {experiences.map((exp, index) => (
+          <motion.div
+            key={index}
+            className="relative bg-[#1c2233] rounded-lg border border-gray-700 shadow-lg p-6"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+            viewport={{ once: true }}
+          >
+            {/* Timeline Connector */}
+            {index !== experiences.length - 1 && (
+              <div className="absolute left-4 top-10 w-0.5 h-full bg-gray-600"></div>
+            )}
 
-                {/* Experience Details */}
-                <div className="ml-10">
-                  <span className="text-sm text-purple-400">{exp.year}</span>
-                  <h3 className="text-xl font-semibold text-pink-400">
-                    {exp.role} - {exp.company}
-                  </h3>
-                  <p className="text-gray-400 mt-2">{exp.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+            {/* Timeline Dot */}
+            <div className="absolute left-4 top-6 transform -translate-x-1/2">
+              <Circle className="text-purple-400" size={16} />
+            </div>
 
-        {/* Community & Hackathons */}
-        <div>
-          <h3 className="text-2xl font-semibold text-blue-400 mb-6 text-center md:text-left">
-            🚀 Community & Hackathons
-          </h3>
-          <div className="space-y-8">
-            {communityExperiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                className="relative bg-[#1c2233] rounded-lg border border-gray-700 shadow-lg p-6"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
-                {/* Timeline Dot */}
-                <div className="absolute left-4 top-6 transform -translate-x-1/2">
-                  <Circle className="text-blue-400" size={16} />
-                </div>
-
-                {/* Experience Details */}
-                <div className="ml-10">
-                  <span className="text-sm text-blue-400">{exp.year}</span>
-                  <h3 className="text-xl font-semibold text-green-400">
-                    {exp.role} - {exp.company}
-                  </h3>
-                  <p className="text-gray-400 mt-2">{exp.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+            {/* Experience Details */}
+            <div className="ml-10">
+              <span className="text-sm text-purple-400">{exp.year}</span>
+              <h3 className="text-xl font-semibold text-pink-400">
+                {exp.role} - {exp.company}
+              </h3>
+              <p className="text-gray-400 mt-2">{exp.description}</p>
+            </div>
+          </motion.div>
+        ))}
       </div>
 
       {/* Developer Animation */}

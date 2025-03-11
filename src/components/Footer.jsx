@@ -23,11 +23,8 @@ export default function Footer() {
           <a href="https://github.com/igauravgupta" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition">
             <Github size={24} />
           </a>
-          <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition">
+          <a href="https://linkedin.com/in/i-gauravgupta" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition">
             <Linkedin size={24} />
-          </a>
-          <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition">
-            <Twitter size={24} />
           </a>
         </div>
 
